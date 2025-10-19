@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xleb Teams — Minecraft сервер</title>
+  <meta name="description" content="Xleb Teams: уютный survival-сервер с ивентами, честной экономикой и дружным сообществом." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"> </div>
+        <span class="brand-name">Xleb Teams</span>
+      </div>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a class="nav-btn" data-route="home">Главная</a>
+        <button class="nav-btn" data-route="rules">Правила
+        <button class="nav-btn" data-route="about">О сервере
+      </nav>
+
+      <div class="nav-mobile">
+        <select id="routeSelect" aria-label="Навигация">
+          <option value="home">Главная</option>
+          <option value="rules">Правила</option>
+          <option value="about">О сервере</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="app">
+    <!-- HOME -->
+    <section id="page-home" class="page visible" role="region" aria-labelledby="home-title">
+      <div class="grid two">
+        <div>
+          <span class="pill">Minecraft Survival 1.21.x</span>
+          <h1 id="home-title" class="title" data-anim="fade-up">Добро пожаловать на <span class="grad">Xleb Teams</span></h1>
+          <p class="lead" data-anim="fade-up">
+            Ламповый выживальный сервер с ивентами, красивыми анимациями и честной экономикой.
+            Играйте соло или объединяйтесь в кланы — мир открыт для ваших историй.
+          </p>
+          <div class="actions">
+            <a id="tgApply" class="btn primary" href="https://t.me/Xleb_Team/10" target="_blank" rel="noreferrer" data-anim="fade-in" data-ip="t.me/Xleb_Team/10" aria-label="Открыть Telegram">Telegram: заявка на IP</a>
+            <a class='btn accent' data-anim="fade-in" href='https://discord.gg/your-invite' target='_blank' rel='noreferrer'>Discord</a>
+            <a class='btn ghost' data-anim="fade-in" href='http://xlebteam.rustix.su:25089/?worldname=world&mapname=surface&zoom=4&x=-48660&y=64&z=1042' target='_blank' rel='noreferrer'>Онлайн‑карта</a>
+          </div>
+
+          <div class="features" data-anim="fade-up">
+            <div class="card">
+              <div class="card-head">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span>Стабильность</span>
+              </div>
+              <p>Paper/Purpur ядро, ежедневные бэкапы и защита от гриферства.</p>
+            </div>
+            <div class="card">
+              <div class="card-head">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 8h6M9 12h6M9 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span>Честные правила</span>
+              </div>
+              <p>Коротко и понятно, без лишней бюрократии.</p>
+            </div>
+            <div class="card">
+              <div class="card-head">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4m0 12v4M2 12h4m12 0h4M4.9 4.9l2.8 2.8m8.6 8.6 2.8 2.8M4.9 19.1l2.8-2.8m8.6-8.6 2.8-2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span>Активы и ивенты</span>
+              </div>
+              <p>Регулярные PvE-волны, квесты и сезонные активности.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="hero">
+            <div class="map-preview">
+              <iframe class="map-frame" title="Онлайн‑карта" referrerpolicy="no-referrer"></iframe>
+              <img class="map-fallback" src="assets/img/map_fallback.png" alt="Превью карты" />
+              <a class="map-link" target="_blank" rel="noreferrer">Открыть карту</a>
+            </div>
+            <div class="character-wrap">
+              <div class="rgb-glow" aria-hidden="true">
+                <span class="orb orb-a"></span>
+                <span class="orb orb-b"></span>
+                <span class="orb orb-c"></span>
+              </div>
+              <img src="assets/img/char_home.png" alt="Персонаж" class="character" />
+            </div>
+            <div class="grid-dots" aria-hidden="true"></div>
+            <div class="rings" aria-hidden="true">
+              <div class="ring ring-a"></div>
+              <div class="ring ring-b"></div>
+              <div class="ring ring-c"></div>
+              <div class="ring ring-d"></div>
+            </div>
+            <div class="hero-footer">
+              <div class="hero-chip">
+                <div class="chip-icon"></div>
+                <div>
+                  <p class="chip-sub">Подключение через Telegram</p>
+                  <p class="chip-main">t.me/Xleb_Team/10</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section id="page-rules" class="page section-with-art" role="region" aria-labelledby="rules-title">
+      <img src="assets/img/char_rules.png" alt="Персонаж" class="section-art" />
+      <h2 id="rules-title" class="subtitle" data-anim="fade-up">Правила сервера</h2>
+      <p class="muted">Кратко и по делу. Цель — комфортная игра для всех.</p>
+      <ol class="rules" data-anim="fade-up">
+        <li><strong>Запрещены читы, дюпы и баг‑эксплойты.</strong> Обо всех найденных багах сообщайте администрации.</li>
+        <li><strong>Уважайте игроков.</strong> Оскорбления, травля, токсичность и спам — повод для санкций.</li>
+        <li><strong>Гриферство и воровство без согласия</strong> — запрещены вне специальных ивентов.</li>
+        <li><strong>Запрет на рекламу</strong> сторонних проектов без согласования.</li>
+        <li><strong>Лаг‑машины, автофермы без ограничений</strong> и чрезмерные редстоун‑нагрузки запрещены. Делайте оптимально.</li>
+        <li><strong>Стримеры и создатели контента</strong>: укажите IP/Discord в описании и соблюдайте правила платформ.</li>
+        <li><strong>Администрация оставляет за собой право</strong> менять правила и применять санкции по ситуации.</li>
+      </ol>
+      <div class="note">
+        Совет: если не уверены — спросите модератора. Мы всегда за диалог.
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="page-about" class="page section-with-art" role="region" aria-labelledby="about-title">
+      <img src="assets/img/char_about.png" alt="Персонаж" class="section-art left" />
+      <h2 id="about-title" class="subtitle" data-anim="fade-up">О сервере</h2>
+      <p class="about-text" data-anim="fade-up">
+        Xleb Teams — это уютный survival‑сервер без pay‑to‑win. Мы любим ванильную атмосферу,
+        но аккуратно добавляем качество жизни: приват, тп, удобные команды и событийный контент.
+        Сезонные мини‑ивенты, лор и красивые анимации частиц делают мир живым.
+      </p>
+      <div class="grid two about-grid" data-anim="fade-up">
+        <div class="card lg">
+          <h3>Техническая база</h3>
+          <p>Paper/Purpur 1.21.x, оптимизация тиков, async‑сохранения, ежедневные бэкапы.</p>
+        </div>
+        <div class="card lg">
+          <h3>Игровой процесс</h3>
+          <p>PvE‑волны, квестовые цепочки, косметика без дисбаланса, честная экономика.</p>
+        </div>
+        <div class="card lg">
+          <h3>Комьюнити</h3>
+          <p>Дружелюбные игроки, поддержка новичков, активный Discord и ивенты по выходным.</p>
+        </div>
+        <div class="card lg">
+          <h3>Прозрачность</h3>
+          <p>Публичные патчноуты, голосования, репорты по производительности сервера.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p>© <span id="year"></span> Xleb Teams. Все права защищены.</p>
+        <p class="tiny">Неофициальный проект Minecraft. Minecraft — товарный знак Mojang Studios.</p>
+      </div>
+      <div class="footer-actions">
+        <button class="btn ghost small" data-anim="fade-in" data-route="rules">Правила
+        <button class="btn ghost small" data-anim="fade-in" data-route="about">О сервере
+        <a class='btn accent small' href='https://discord.gg/your-invite' target='_blank' rel='noreferrer'>Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>window.__CONFIG__ = {"serverName":"Xleb Teams","serverIp":"","discord":"","map":"http://xlebteam.rustix.su:25089/?worldname=world&mapname=surface&zoom=4&x=-48660&y=64&z=1042","telegram":"https://t.me/Xleb_Team/10"};</script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
