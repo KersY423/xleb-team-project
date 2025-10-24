@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Xleb Teams — Minecraft сервер</title>
+<meta content="Xleb Teams: уютный survival-сервер с ивентами, честной экономикой и дружным сообществом." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<style>
+/* --- Pepeland-like Rules Layout (адаптировано под Xleb Teams) --- */
+.rules-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.rules-sidebar {
+  position: sticky;
+  top: 100px;
+  flex: 0 0 220px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.rules-sidebar h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+.rules-sidebar a {
+  display: block;
+  color: #bbb;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.rules-sidebar a:hover, .rules-sidebar a.active {
+  color: #6fff9e;
+  text-shadow: 0 0 8px #6fff9e;
+}
+.rules-content {
+  flex: 1;
+}
+.rules-content h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.rules-content h2 span {
+  background: #222;
+  border-radius: 8px;
+  padding: 0.2rem 0.7rem;
+  font-size: 1rem;
+}
+.rule-item {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.rule-item strong {
+  color: #fff;
+}
+.rule-item ul {
+  margin-left: 2rem;
+  list-style-type: disc;
+}
+[data-fade] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+[data-fade].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style><style>
+/* === Финальный Pepeland-подобный дизайн правил (Xleb Teams адаптация) === */
+.rules-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+.rules-content {
+  flex: 1 1 70%;
+  max-width: 880px;
+}
+.rules-toc {
+  flex: 0 0 240px;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  padding: 1.2rem 1.4rem;
+}
+.rules-toc h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+.rules-toc a {
+  display: block;
+  padding: 0.45rem 0;
+  color: #bdbdbd;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.rules-toc a:last-child {
+  border-bottom: none;
+}
+.rules-toc a:hover, .rules-toc a.active {
+  color: #6fff9e;
+  text-shadow: 0 0 6px #6fff9e;
+}
+@media (max-width: 900px) {
+  .rules-layout { flex-direction: column; }
+  .rules-toc { width: 100%; position: relative; top: 0; margin-top: 2rem; }
+}
+</style><style>
+.rules-content {
+  max-width: 1150px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+.rules-content h2 {
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+}
+.rules-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.rules-content p {
+  margin-bottom: 1rem;
+}
+.rules-toc {
+  flex: 0 0 220px;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+.rules-toc h3 {
+  font-size: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.rules-toc a {
+  display: block;
+  color: #b5b5b5;
+  padding: 0.4rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.3s;
+}
+.rules-toc a:hover, .rules-toc a.active {
+  color: #6fff9e;
+}
+@media (max-width: 900px) {
+  .rules-toc { display: none; }
+  .rules-content { max-width: 95%; }
+}
+</style><style>
+/* Adjust layout and TOC behavior */
+.rules-layout { position: relative; }
+.rules-toc { position: absolute; right: 0; top: 0; transform: translateY(0); transition: transform 0.1s linear; }
+@media (max-width: 900px) {
+  .rules-toc { display: none !important; position: relative; transform: none; }
+  .rules-content { max-width: 95%; }
+}
+.rules-content { max-width: 1200px; margin: 0 auto; }
+.rules-content h2 span.num-badge {
+  background: #222;
+  border-radius: 8px;
+  padding: 0.2rem 0.7rem;
+  font-size: 1rem;
+  margin-right: 0.6rem;
+  color: #fff;
+  display: inline-block;
+  min-width: 28px;
+  text-align: center;
+}
+.rules-content h2 { display: flex; align-items: center; gap: 0.6rem; }
+</style><style>
+#page-rules {
+  position: relative;
+  overflow: hidden;
+}
+#rules-bg-particles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: transparent;
+  pointer-events: none;
+}
+#page-rules > *:not(#rules-bg-particles) {
+  position: relative;
+  z-index: 1;
+}
+</style><style>
+/* Final adjustments for rules section */
+#page-rules { position: relative; overflow: visible; padding-bottom: 140px; }
+/* Canvas covers entire rules section */
+#rules-bg-particles { position: absolute; inset: 0 0 0 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+/* Ensure rules content above canvas */
+#page-rules > *:not(#rules-bg-particles) { position: relative; z-index: 1; }
+/* Fixed transparent TOC on right */
+.rules-toc { position: fixed !important; right: 24px; top: 120px; width: 240px; background: rgba(255,255,255,0.06); border-radius: 12px; padding: 1rem 1.2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.25); backdrop-filter: none; z-index: 50; }
+/* Hide TOC on small screens */
+@media (max-width: 900px) {
+  .rules-toc { display: none !important; position: static; transform: none; }
+  .rules-content { max-width: 95%; padding: 0 16px; }
+}
+/* Character positioning bottom-right with animation */
+.char-rules { position: absolute; right: 24px; bottom: 8px; width: 240px; max-width: 28%; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.2,.9,.2,1); z-index: 40; pointer-events: none; }
+/* Show character after load */
+.page-visible .char-rules, .char-rules.visible { opacity: 1; transform: translateY(0); }
+/* Numbers badge tweak */
+.num-badge { background: #222; border-radius: 8px; padding: 0.2rem 0.7rem; color: #fff; margin-right: 0.6rem; display:inline-block; min-width:28px; text-align:center; }
+/* Increase particles canvas stacking so it sits under content */
+#rules-bg-particles { z-index: 5; }
+/* Make rules content wider */
+.rules-content { max-width: 1150px; margin: 0 auto; }
+</style></head>
+<body>
+<div class="bg"></div>
+<header class="site-header">
+<div class="container header-inner">
+<div class="brand">
+<div aria-hidden="true" class="brand-mark"> </div>
+<span class="brand-name">Xleb Teams</span>
+</div>
+<nav aria-label="Primary" class="nav-desktop">
+<a class="nav-btn" data-route="home">Главная</a>
+<button class="nav-btn" data-route="rules">Правила
+        <button class="nav-btn" data-route="about">О сервере
+      </button></button></nav>
+<div class="nav-mobile">
+<select aria-label="Навигация" id="routeSelect">
+<option value="home">Главная</option>
+<option value="rules">Правила</option>
+<option value="about">О сервере</option>
+</select>
+</div>
+</div>
+</header>
+<main class="container" id="app">
+<!-- HOME -->
+<section aria-labelledby="home-title" class="page visible" id="page-home" role="region">
+<div class="grid two">
+<div>
+<span class="pill">Minecraft Survival 1.21.x</span>
+<h1 class="title" data-anim="fade-up" id="home-title">Добро пожаловать на <span class="grad">Xleb Teams</span></h1>
+<p class="lead" data-anim="fade-up">
+            Ламповый выживальный сервер с ивентами, красивыми анимациями и честной экономикой.
+            Играйте соло или объединяйтесь в кланы — мир открыт для ваших историй.
+          </p>
+<div class="actions">
+<a aria-label="Открыть Telegram" class="btn primary" data-anim="fade-in" data-ip="t.me/Xleb_Team/10" href="https://t.me/Xleb_Team/10" id="tgApply" rel="noreferrer" target="_blank">Telegram: заявка на IP</a>
+<a class="btn accent" data-anim="fade-in" href="https://discord.gg/your-invite" rel="noreferrer" target="_blank">Discord</a>
+<a class="btn ghost" data-anim="fade-in" href="http://xlebteam.rustix.su:25089/?worldname=world&amp;mapname=surface&amp;zoom=4&amp;x=-48660&amp;y=64&amp;z=1042" rel="noreferrer" target="_blank">Онлайн‑карта</a>
+</div>
+<div class="features" data-anim="fade-up">
+<div class="card">
+<div class="card-head">
+<svg aria-hidden="true" height="18" viewbox="0 0 24 24" width="18"><path d="M3 7h18M3 12h18M3 17h18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+<span>Стабильность</span>
+</div>
+<p>Paper/Purpur ядро, ежедневные бэкапы и защита от гриферства.</p>
+</div>
+<div class="card">
+<div class="card-head">
+<svg aria-hidden="true" height="18" viewbox="0 0 24 24" width="18"><path d="M6 4h12v16H6z" fill="none" stroke="currentColor" stroke-width="2"></path><path d="M9 8h6M9 12h6M9 16h6" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+<span>Честные правила</span>
+</div>
+<p>Коротко и понятно, без лишней бюрократии.</p>
+</div>
+<div class="card">
+<div class="card-head">
+<svg aria-hidden="true" height="18" viewbox="0 0 24 24" width="18"><path d="M12 2v4m0 12v4M2 12h4m12 0h4M4.9 4.9l2.8 2.8m8.6 8.6 2.8 2.8M4.9 19.1l2.8-2.8m8.6-8.6 2.8-2.8" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+<span>Активы и ивенты</span>
+</div>
+<p>Регулярные PvE-волны, квесты и сезонные активности.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="hero">
+<div class="map-preview">
+<iframe class="map-frame" referrerpolicy="no-referrer" title="Онлайн‑карта"></iframe>
+<img alt="Превью карты" class="map-fallback" src="assets/img/map_fallback.png"/>
+<a class="map-link" rel="noreferrer" target="_blank">Открыть карту</a>
+</div>
+<div class="character-wrap">
+<div aria-hidden="true" class="rgb-glow">
+<span class="orb orb-a"></span>
+<span class="orb orb-b"></span>
+<span class="orb orb-c"></span>
+</div>
+<img alt="Персонаж" class="character" src="assets/img/char_home.png"/>
+</div>
+<div aria-hidden="true" class="grid-dots"></div>
+<div aria-hidden="true" class="rings">
+<div class="ring ring-a"></div>
+<div class="ring ring-b"></div>
+<div class="ring ring-c"></div>
+<div class="ring ring-d"></div>
+</div>
+<div class="hero-footer">
+<div class="hero-chip">
+<div class="chip-icon"></div>
+<div>
+<p class="chip-sub">Подключение через Telegram</p>
+<p class="chip-main">t.me/Xleb_Team/10</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RULES -->
+<section aria-labelledby="rules-title" class="page section-with-art" id="page-rules" role="region"><canvas id="rules-bg-particles"></canvas><h2 class="subtitle" id="rules-title">Правила сервера</h2><div class="rules-wrapper"><div class="rules-layout"><div class="rules-content" id="rules">
+<h2 id="r1"><span class="num-badge">1</span>Общие правила</h2>
+<p><strong>1.1.</strong><br/>По всем вопросам о легальности интересующего мода обращайтесь к модераторам.</p>
+<p><strong>1.2.</strong><br/>Ответственность всегда несет владелец аккаунта, независимо от того, кто совершал действия под данным аккаунтом.</p>
+<p><strong>1.3. Запрещено:</strong></p>
+<ul>
+<li>Использовать в никнейме нецензурные выражения, оскорбления, а также выражения, нарушающие правила серверов XLEB TEAM</li>
+<li>Намеренное использование никнейма, схожего на никнейм другого игрока с целью выдачи себя за другое лицо</li>
+<li>Продажа и покупка товаров, услуг за неигровой контент (за денежные средства, криптовалюту и прочее)</li>
+<li>Действия, направленные на возбуждение ненависти либо вражды, а также на унижение достоинства человека либо группы лиц по признакам пола, расы, национальности, языка, происхождения, отношения к религии, а также принадлежности к какой-либо социальной группе</li>
+<li>Доксинг (поиск и опубликование персональной или конфиденциальной информации о человеке без его согласия)</li>
+<li>Использование дополнительных аккаунтов для обхода ограничений</li>
+<li>Нарушение правил сервера, пользовательского соглашения, правил (Terms of Service) платформы Twitch.tv</li>
+</ul>
+<h2 id="r2"><span class="num-badge">2</span>Правила общения</h2>
+<p><strong>2.1. Запрещено:</strong></p>
+<ul>
+<li>Нарушение правил сервера и призывы к этому</li>
+<li>Токсичное поведение, спам, флуд</li>
+<li>Реклама, упоминание (в том числе лозунги) сторонних серверов</li>
+<li>Реклама сторонних ресурсов, не связанных с проектом</li>
+<li>Использование слов из списка запрещённых выражений. Запрещены все вариации этих слов и выражений, в том числе с использованием цензуры или использованием иностранного языка.</li>
+</ul>
+<p><strong>2.2.</strong> Всё общение с модераторами происходит только в текстовом виде.</p>
+<p><strong>2.3.</strong> Основной формат общения на сервере — текстовый чат. Настойчивое или агрессивное принуждение игроков сервера перейти в голосовое общение может повлечь мут или временный бан.</p>
+<p><strong>2.4.</strong> Используйте голосовой чат на свой страх и риск. Все правила чата действуют в голосовом чате.</p>
+<h2 id="r3"><span class="num-badge">3</span>Правила игры на сервере</h2>
+<p><strong>3.1.</strong> В радиусе 1000 блоков от координат спавна строительство запрещено в соответствии с зонированием. За их пределами разрешено строить в любом удобном вам стиле.</p>
+<p><strong>3.2.</strong> За пределами спавна и торговых зон строить можно на любой незанятой территории. Находясь на чужой территории, соблюдайте правила её владельца.</p>
+<p><strong>3.3.</strong> Чтобы занять территорию, нужно пометить её табличками, кострами, или любым иным достаточно заметным и однозначным способом. Разметка должна однозначно давать понять, что территория занята. По умолчанию, территория занятая игроком распространяется на всю высоту мира — от -64 до 320, но владелец может разрешить другому игроку использовать его территорию на другой высоте. Занятую территорию продавать запрещено. Если нет намерений её застроить, необходимо просто освободить её от разметки.</p>
+<p><strong>3.4.</strong> Ситуации, в которых игрок строит постройки на уже занятой территории разбираются отдельно каждая, так как вина может лежать на том, кто недостаточно хорошо разметил территорию или на том, кто в упор не заметил отметок.</p>
+<p><strong>3.5.</strong> Если занятая вами территория достаточно большая, а вы не сделали на ней ничего и не появляетесь на сервере несколько недель (никого не предупредив) ваша территория может быть признана никому не принадлежащей (перед этим вас скорее всего спросят в нашем Discord сервере).</p>
+<p><strong>3.6.</strong> Возврат вещей модерацией в случае смерти производится в исключительных случаях, возвращаются только инструменты и броня.</p>
+<p><strong>3.7.</strong> XLEB TEAM — НЕ Role-play сервер! Мы не против, если вы будете ролеплеить, но до тех пор, пока это никому не мешает. Если РП помешает кому-то, или просто будет неуместным вы можете получить бан. Жалобы на то, что кто-то испортил вам РП, не рассматриваются.</p>
+<p><strong>3.8.</strong> Светящийся текст на табличках значительно влияет на FPS. Поэтому воздержитесь от его использования в общественных зонах (средневековая, современная и так далее) и фермах. В крайнем случае используйте поверх светло-серый, серый или бирюзовый краситель.</p>
+<p><strong>3.9.</strong> На сервере разрешено использование автокликера, только если он не меняет и не способствует изменению положения мыши, игрока и энтити, без функционала автофокуса на игрока, энтити и блоки, с одинаковой задержкой между каждым кликом.</p>
+<p><strong>3.10.</strong> Каждый игрок может иметь только одного счастливого гаста. Каждый гаст должен храниться в полностью защищённой блоками территории. Модерация не несёт ответственности за утерю моба.</p>
+<p><strong>3.11. Запрещено:</strong></p>
+<ul>
+<li>Гриферство, воровство и читерство в любом виде</li>
+<li>Дюп</li>
+<li>ПВП без обоюдного согласия</li>
+<li>Использование зарядов ветра, зелий плетения и ветрового заряда в общественных местах, фермах и на чужих постройках</li>
+<li>Установка блоков голов в зонах спавна, торговых зонах, хабах и на чужих базах без разрешения хозяина (в больших количествах)</li>
+<li>Головы блоков могут вызывать лаги на клиенте</li>
+<li>Создание и распространение контента (рассказов, фанфиков, артов и так далее) с участием игроков сервера без их личного согласия</li>
+<li>Строительство любых сапрессеров — ядро сервера не позволяет им корректно работать</li>
+<li>Строительство ледяных дорог в верхнем мире — это вызывает нагрузки на сервер больше, чем использование таких дорог в нижнем мире</li>
+<li>Добыча руд, ресурсов и поиск данжей с помощью модификаций</li>
+<li>Миникарта не запрещена</li>
+<li>Порча терраформинга и строительство в воздухе и любых водоёмах построек, логически не подходящих под окружение.</li>
+<li>Ловушки (например: никак не ограждённые глубокие ямы)</li>
+<li>Уничтожение и приватизирование спавнеров и спавнеров испытаний без дальнейшего его обустройтва — исключение: если спавнер находится на занятой вами территории и/или мешает стройке</li>
+<li>Телепортация на большие расстояния с помощью пушек и механизмов</li>
+<li>Использование стазис-камер для эндерпёрлов не в рамках проведения ивента — исключения должны обсуждаться с модерацией</li>
+</ul>
+<p><strong>3.12.</strong> Зачистка подводного данжа, находящегося за барьером: Губки принадлежат тому, кто успел их добыть, «приват» не поможет. Занимать полностью данж можно только табличкой, на призмариновых блоках самого данжа как только он будет доступен из-за барьера. Занимать из-за границы можно только для общих ферм, губки при этом всё так же принадлежат тем, кто добудет их быстрее.</p>
+</div><aside class="rules-toc"><h3>Оглавление</h3><a href="#r1">Общие правила</a><a href="#r2">Правила общения</a><a href="#r3">Правила игры</a></aside></div></div><div class="note">Совет: если не уверены — спросите модератора. Мы всегда за диалог.</div><img alt="Персонаж" class="char-rules" src="assets/img/char_rules.png"/></section>
+<!-- ABOUT -->
+<section aria-labelledby="about-title" class="page section-with-art" id="page-about" role="region">
+<img alt="Персонаж" class="section-art left" src="assets/img/char_about.png"/>
+<h2 class="subtitle" data-anim="fade-up" id="about-title">О сервере</h2>
+<p class="about-text" data-anim="fade-up">
+        Xleb Teams — это уютный survival‑сервер без pay‑to‑win. Мы любим ванильную атмосферу,
+        но аккуратно добавляем качество жизни: приват, тп, удобные команды и событийный контент.
+        Сезонные мини‑ивенты, лор и красивые анимации частиц делают мир живым.
+      </p>
+<div class="grid two about-grid" data-anim="fade-up">
+<div class="card lg">
+<h3>Техническая база</h3>
+<p>Paper/Purpur 1.21.x, оптимизация тиков, async‑сохранения, ежедневные бэкапы.</p>
+</div>
+<div class="card lg">
+<h3>Игровой процесс</h3>
+<p>PvE‑волны, квестовые цепочки, косметика без дисбаланса, честная экономика.</p>
+</div>
+<div class="card lg">
+<h3>Комьюнити</h3>
+<p>Дружелюбные игроки, поддержка новичков, активный Discord и ивенты по выходным.</p>
+</div>
+<div class="card lg">
+<h3>Прозрачность</h3>
+<p>Публичные патчноуты, голосования, репорты по производительности сервера.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<div>
+<p>© <span id="year"></span> Xleb Teams. Все права защищены.</p>
+<p class="tiny">Неофициальный проект Minecraft. Minecraft — товарный знак Mojang Studios.</p>
+</div>
+<div class="footer-actions">
+<button class="btn ghost small" data-anim="fade-in" data-route="rules">Правила
+        <button class="btn ghost small" data-anim="fade-in" data-route="about">О сервере
+        <a class="btn accent small" href="https://discord.gg/your-invite" rel="noreferrer" target="_blank">Discord</a>
+</button></button></div>
+</div>
+</footer>
+<script>window.__CONFIG__ = {"serverName":"Xleb Teams","serverIp":"","discord":"","map":"http://xlebteam.rustix.su:25089/?worldname=world&mapname=surface&zoom=4&x=-48660&y=64&z=1042","telegram":"https://t.me/Xleb_Team/10"};</script>
+<script src="assets/js/app.js"></script>
+<script>
+document.querySelectorAll('[data-fade]').forEach(el => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  observer.observe(el);
+});
+const links = document.querySelectorAll('.rules-sidebar a');
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY + 100;
+  links.forEach(link => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add('active');
+    } else link.classList.remove('active');
+  });
+});
+</script><script>
+// плавный переход при клике
+document.querySelectorAll('.rules-toc a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+  });
+});
+
+// подсветка активного раздела при скролле
+window.addEventListener('scroll', () => {
+  const links = document.querySelectorAll('.rules-toc a');
+  const fromTop = window.scrollY + 100;
+  links.forEach(link => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+</script><script>
+// Advanced TOC following script: moves the TOC down inside the .rules-layout as the page scrolls.
+(function(){
+  const toc = document.querySelector('.rules-toc');
+  const layout = document.querySelector('.rules-layout');
+  if (!toc || !layout) return;
+  const topOffset = 20; // gap from top of layout
+  function update() {
+    const layoutRect = layout.getBoundingClientRect();
+    const tocHeight = toc.offsetHeight;
+    const layoutHeight = layout.offsetHeight;
+    // Compute how far user has scrolled relative to layout
+    const maxY = Math.max(0, layoutHeight - tocHeight - 20);
+    // When layout is in view, compute y
+    const scrolledIntoLayout = Math.max(0, window.scrollY - (window.scrollY + layoutRect.top - window.scrollY));
+    // Better: compute desired based on viewport relative position
+    const desired = Math.min(maxY, Math.max(0, (window.scrollY - (window.scrollY + layoutRect.top) + topOffset)));
+    // Simpler approach:
+    const layoutTopPage = window.scrollY + layoutRect.top;
+    let y = 0;
+    if (window.scrollY + topOffset > layoutTopPage) {
+      y = Math.min(maxY, window.scrollY + topOffset - layoutTopPage);
+    } else {
+      y = 0;
+    }
+    toc.style.transform = 'translateY(' + Math.round(y) + 'px)';
+  }
+  // update on load and scroll and resize
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  // initial call
+  update();
+})();
+</script><script>
+window.addEventListener('load', function(){
+  const char = document.querySelector('.char-rules');
+  const rulesSec = document.getElementById('page-rules');
+  setTimeout(()=>{
+    if(char) char.classList.add('visible');
+    if(rulesSec) rulesSec.classList.add('page-visible');
+  }, 300);
+});
+</script><script>
+// === Animated background for Rules section (improved) ===
+(function(){
+  const canvas = document.getElementById('rules-bg-particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const particleCount = 40; // fewer but larger
+  let width = 0, height = 0, DPR = window.devicePixelRatio || 1;
+
+  function resize() {
+    width = canvas.width = Math.floor(canvas.offsetWidth * DPR);
+    height = canvas.height = Math.floor(canvas.offsetHeight * DPR);
+    canvas.style.width = canvas.offsetWidth + 'px';
+    canvas.style.height = canvas.offsetHeight + 'px';
+    ctx.scale(DPR, DPR);
+  }
+  function createParticle() {
+    return {
+      x: Math.random() * canvas.offsetWidth,
+      y: canvas.offsetHeight + Math.random() * (canvas.offsetHeight * 0.6),
+      size: 6 + Math.random() * 18, // larger particles
+      speed: 0.4 + Math.random() * 1.2,
+      alpha: 0.3 + Math.random() * 0.8,
+      drift: (Math.random()-0.5) * 0.6
+    };
+  }
+  function init() {
+    particles = [];
+    for (let i = 0; i < particleCount; i++) particles.push(createParticle());
+    resize();
+  }
+  window.addEventListener('resize', function(){ init(); });
+  init();
+
+  function draw() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      const x = p.x;
+      const y = p.y;
+      const size = p.size;
+      // glow gradient
+      const g = ctx.createRadialGradient(x, y, 0, x, y, size*1.8);
+      g.addColorStop(0, 'rgba(255,255,255,' + p.alpha + ')');
+      g.addColorStop(0.6, 'rgba(255,255,255,' + (p.alpha*0.6) + ')');
+      g.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(x, y, size, 0, Math.PI*2);
+      ctx.fill();
+
+      // update
+      p.y -= p.speed;
+      p.x += p.drift;
+      // fade out as rises
+      p.alpha -= 0.0015 + (p.speed * 0.0005);
+      // if fully faded or above top enough, reset to bottom
+      if (p.alpha <= 0 || p.y < -size*2) {
+        particles[i] = createParticle();
+        particles[i].y = canvas.offsetHeight + 10;
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script><script>
+// smooth scroll for TOC links
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.rules-toc a').forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      var rect = target.getBoundingClientRect();
+      var offset = window.scrollY + rect.top - 80;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    });
+  });
+});
+</script></body>
+</html>
