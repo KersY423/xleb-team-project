@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xleb Teams — Правила</title>
+  <style>
+    body {
+      background-color: #0c0f1a;
+      color: #e0e0e0;
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0c0f1a, #16213e);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 { font-size: 1.2rem; font-weight: 600; }
+    nav a {
+      color: #b5b5b5;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    nav a:hover { color: #6fff9e; text-shadow: 0 0 6px #6fff9e; }
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+      position: relative;
+    }
+
+    .rules-content {
+      max-width: 900px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      color: #fff;
+    }
+    h2 span {
+      background: #2e2e2e;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.3rem 0.9rem;
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+
+    h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .rule-item {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .rule-item strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    ul {
+      margin-left: 2rem;
+      list-style-type: disc;
+    }
+
+    a {
+      color: #6fff9e;
+      text-decoration: none;
+    }
+    a:hover { text-shadow: 0 0 6px #6fff9e; }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      right: 2rem;
+      top: 8rem;
+      background-color: #101526;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .sidebar h4 {
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #b5b5b5;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    .sidebar a:hover, .sidebar a.active {
+      color: #6fff9e;
+      text-shadow: 0 0 8px #6fff9e;
+    }
+
+    /* Fade animation */
+    [data-fade] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    [data-fade].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Xleb Teams</h1>
+  <nav>
+    <a href="#">Главная</a>
+    <a href="#rules">Правила</a>
+    <a href="#">О сервере</a>
+  </nav>
+</header>
+
+<main>
+  <div class="rules-content" id="rules">
+    <h2 id="r1" data-fade><span>1</span>Общие правила</h2>
+    <div class="rule-item" data-fade><strong>1.1.</strong> По всем вопросам о легальности интересующего мода обращайтесь к модераторам.</div>
+    <div class="rule-item" data-fade><strong>1.2.</strong> Ответственность всегда несет владелец аккаунта, независимо от того, кто совершал действия под данным аккаунтом.</div>
+    <div class="rule-item" data-fade><strong>1.3. Запрещено:</strong>
+      <ul>
+        <li>Использовать в никнейме нецензурные выражения, оскорбления, а также выражения, нарушающие правила серверов XLEB TEAM</li>
+        <li>Намеренное использование никнейма, схожего на никнейм другого игрока с целью выдачи себя за другое лицо</li>
+        <li>Продажа и покупка товаров, услуг за неигровой контент (за денежные средства, криптовалюту и прочее)</li>
+        <li>Действия, направленные на возбуждение ненависти либо вражды, а также на унижение достоинства человека либо группы лиц по признакам пола, расы, национальности, языка, происхождения, отношения к религии, а также принадлежности к какой-либо социальной группе</li>
+        <li>Доксинг (поиск и опубликование персональной или конфиденциальной информации о человеке без его согласия)</li>
+        <li>Использование дополнительных аккаунтов для обхода ограничений</li>
+        <li>Нарушение правил сервера, пользовательского соглашения, правил (Terms of Service) платформы Twitch.tv</li>
+      </ul>
+    </div>
+
+    <h2 id="r2" data-fade><span>2</span>Правила общения</h2>
+    <div class="rule-item" data-fade><strong>2.1. Запрещено:</strong>
+      <ul>
+        <li>Нарушение правил сервера и призывы к этому</li>
+        <li>Токсичное поведение, спам, флуд</li>
+        <li>Реклама, упоминание (в том числе лозунги) сторонних серверов</li>
+        <li>Реклама сторонних ресурсов, не связанных с проектом</li>
+        <li>Использование слов из списка запрещённых выражений. Запрещены все вариации этих слов и выражений, в том числе с использованием цензуры или использованием иностранного языка.</li>
+      </ul>
+    </div>
+    <div class="rule-item" data-fade><strong>2.2.</strong> Всё общение с модераторами происходит только в текстовом виде.</div>
+    <div class="rule-item" data-fade><strong>2.3.</strong> Основной формат общения на сервере — текстовый чат. Настойчивое или агрессивное принуждение игроков сервера перейти в голосовое общение может повлечь мут или временный бан.</div>
+    <div class="rule-item" data-fade><strong>2.4.</strong> Используйте голосовой чат на свой страх и риск. Все правила чата действуют в голосовом чате.</div>
+
+    <h2 id="r3" data-fade><span>3</span>Правила игры на сервере</h2>
+    <div class="rule-item" data-fade><strong>3.1.</strong> В радиусе 1000 блоков от координат спавна строительство запрещено в соответствии с зонированием. За их пределами разрешено строить в любом удобном вам стиле.</div>
+    <div class="rule-item" data-fade><strong>3.2.</strong> За пределами спавна и торговых зон строить можно на любой незанятой территории. Находясь на чужой территории, соблюдайте правила её владельца.</div>
+    <div class="rule-item" data-fade><strong>3.3.</strong> Чтобы занять территорию, нужно пометить её табличками, кострами, или любым иным достаточно заметным и однозначным способом. Разметка должна однозначно давать понять, что территория занята.</div>
+    <div class="rule-item" data-fade><strong>3.4.</strong> Ситуации, в которых игрок строит постройки на уже занятой территории, разбираются отдельно.</div>
+    <div class="rule-item" data-fade><strong>3.5.</strong> Если занятая вами территория достаточно большая, а вы не появляетесь на сервере несколько недель (никого не предупредив), она может быть признана никому не принадлежащей.</div>
+    <div class="rule-item" data-fade><strong>3.6.</strong> Возврат вещей модерацией производится в исключительных случаях.</div>
+    <div class="rule-item" data-fade><strong>3.7.</strong> XLEB TEAM — не Role-play сервер! Мы не против ролевых игр, но до тех пор, пока это никому не мешает.</div>
+    <div class="rule-item" data-fade><strong>3.8.</strong> Светящийся текст на табличках влияет на FPS, не используйте его в общественных зонах.</div>
+    <div class="rule-item" data-fade><strong>3.9.</strong> Разрешено использование автокликера, только если он не меняет положение мыши и игрока.</div>
+    <div class="rule-item" data-fade><strong>3.10.</strong> Каждый игрок может иметь только одного счастливого гаста. Гаст должен храниться в защищённой территории.</div>
+    <div class="rule-item" data-fade><strong>3.11. Запрещено:</strong>
+      <ul>
+        <li>Гриферство, воровство и читерство</li>
+        <li>Дюп</li>
+        <li>ПВП без согласия</li>
+        <li>Использование зарядов ветра и зелий плетения</li>
+        <li>Строительство ледяных дорог в верхнем мире</li>
+      </ul>
+    </div>
+    <div class="rule-item" data-fade><strong>3.12.</strong> Зачистка подводного данжа за барьером: губки принадлежат тому, кто успел их добыть.</div>
+  </div>
+
+  <aside class="sidebar">
+    <h4>На этой странице</h4>
+    <a href="#r1" class="active">1. Общие правила</a>
+    <a href="#r2">2. Правила общения</a>
+    <a href="#r3">3. Правила игры</a>
+  </aside>
+</main>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-fade]').forEach(el => observer.observe(el));
+
+  const links = document.querySelectorAll('.sidebar a');
+  window.addEventListener('scroll', () => {
+    let fromTop = window.scrollY + 100;
+    links.forEach(link => {
+      const section = document.querySelector(link.getAttribute('href'));
+      if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+        link.classList.add('active');
+      } else link.classList.remove('active');
+    });
+  });
+</script>
+</body>
+</html>
